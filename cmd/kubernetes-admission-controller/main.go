@@ -20,7 +20,7 @@ import (
 	"errors"
 	"flag"
 	"fmt"
-	anchore "github.com/anchore/kubernetes-admission-controller/pkg/anchore/client"
+	anchore "github.com/polarpoint/kubernetes-admission-controller/pkg/anchore/client"
 	"github.com/fsnotify/fsnotify"
 	"k8s.io/klog"
 	"github.com/spf13/viper"
