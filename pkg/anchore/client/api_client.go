@@ -55,7 +55,9 @@ type service struct {
 // optionally a custom http.Client to allow for advanced features such as caching.
 func NewAPIClient(cfg *Configuration) *APIClient {
 	if cfg.HTTPClient == nil {
-		cfg.HTTPClient = http.DefaultClient
+	tr := http.DefaultTransport.(*http.Transport)
+	tr.TLSClientConfig.InsecureSkipVerify = true
+	cfg.HTTPClient = http.DefaultClient
 	}
 
 	c := &APIClient{}
